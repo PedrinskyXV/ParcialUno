@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/Intel2">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvPerfilPc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/Intel2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -43,6 +45,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:text="TextView"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/icons"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -52,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:text="TextView"
+                    android:textColor="@color/icons"
                     android:textSize="18sp" />
             </LinearLayout>
 

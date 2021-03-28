@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         rcvPc = findViewById(R.id.rcvLista);
         rcvPc.setLayoutManager(new LinearLayoutManager(this));
         pcAdapter = new PcAdapter(obtenerPc());
@@ -45,13 +46,13 @@ public class MainActivity extends AppCompatActivity {
     }
     public List<PcModelo> obtenerPc(){
         List<PcModelo> pc = new ArrayList<>();
-        pc.add(new PcModelo("Laptops","Las laptops y dispositivos mas potentes del mercado.",
-                R.drawable.laptops));
-        pc.add(new PcModelo("MicroProcesadores","Los más potentes y veloces del mercado a precio accesible.",
-                R.drawable.procesador));
-        pc.add(new PcModelo("Tarjetas Gráficas","Para los juegos más exigentes y con la mejor resolución.",
-                R.drawable.grafica));
-        pc.add(new PcModelo("Memoria RAM","Las más confiables y de mayor transaccion de datos.",
+        pc.add(new PcModelo("Laptops","Desempeño para tareas exigentes y portabilidad con poco peso.",
+                R.drawable.bannerlaptop));
+        pc.add(new PcModelo("MicroProcesadores","Los procesadores Intel® Core™ de 11ʳᵃ Generación te permiten producir, crear, conectarte y colaborar.",
+                R.drawable.cpubanner));
+        pc.add(new PcModelo("Tarjetas Gráficas","Las GPU GeForce RTX ™ 30 Series ofrecen el máximo rendimiento para jugadores y creadores.",
+                R.drawable.gpubanner));
+        pc.add(new PcModelo("Memoria RAM","Nuestras memorias están construidas con materiales de la más alta calidad y se prueban rigurosamente.",
                 R.drawable.ram));
         return pc;
     }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Intel"
     tools:context=".producto">
 
     <TextView
@@ -15,6 +16,7 @@
         android:layout_marginEnd="8dp"
         android:text="TextView"
         android:textAlignment="center"
+        android:textColor="@color/icons"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,8 +40,8 @@
         android:id="@+id/txvPrecio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:text="TextView"
+        android:textColor="@color/icons"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/txvDescripcionP"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,11 +53,12 @@
         android:layout_width="0dp"
         android:layout_height="129dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="50dp"
         android:text="TextView"
+        android:textColor="@color/icons"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txvPrecio" />
 
@@ -63,36 +66,55 @@
         android:id="@+id/btnConfirmar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="157dp"
-        android:text="Confirmar"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:drawableRight="@drawable/ic_shopping_cart"
+        android:text="Comprar"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txvCantidad" />
-
-    <EditText
-        android:id="@+id/txvCantidad"
-        android:layout_width="146dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="108dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txvDescripcionP" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
+        android:layout_width="65dp"
+        android:layout_height="27dp"
+        android:layout_centerHorizontal="false"
+        android:layout_marginStart="132dp"
+        android:layout_marginBottom="132dp"
+        android:lineSpacingExtra="8sp"
+        android:text="Cantidad:"
+        android:textAlignment="center"
+        android:textColor="@color/icons"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/txvCantidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="69dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="205dp"
-        android:text="Cantidad"
+        android:layout_marginBottom="52dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnConfirmar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toEndOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="310dp"
+        android:layout_height="30dp"
+        android:text="*Debido al nuevo lanzamiento solo se permite la compra de 3 productos por persona."
+        android:textAlignment="center"
+        android:textColor="?android:attr/colorActivatedHighlight"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txvCantidad"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txvDescripcionP"
+        app:layout_constraintVertical_bias="0.042" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

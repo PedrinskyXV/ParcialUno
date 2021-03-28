@@ -5,6 +5,7 @@
     android:id="@+id/imvBanner"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Intel"
     tools:context=".MainActivity">
 
     <ImageView
@@ -12,16 +13,17 @@
         android:layout_width="0dp"
         android:layout_height="186dp"
         android:layout_marginTop="-1dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dell" />
+        app:srcCompat="@drawable/bannerprin" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvLista"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="391dp"
+        android:layout_height="420dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -29,50 +31,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="17dp"
-        android:layout_height="15dp"
-        android:layout_marginStart="281dp"
-        android:layout_marginEnd="113dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.83"
-        app:srcCompat="@drawable/dell_logo" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="99dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="280dp"
-        android:text="Alienware"
-        android:textAlignment="viewStart"
-        android:textColor="#3C8ACD"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.926" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="146dp"
+        android:layout_width="387dp"
         android:layout_height="86dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="212dp"
-        android:text="Los monitores son justo lo que le falta a tu estación de combate para juegos de PC"
-        android:textAlignment="viewStart"
-        android:textColor="#3C8ACD"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        android:text="Saltos de evolución con los procesadores Intel® Core™ de 11ª Generación"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/icons"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rcvLista"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.565" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
