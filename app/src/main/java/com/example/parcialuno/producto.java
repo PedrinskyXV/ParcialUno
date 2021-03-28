@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -35,7 +37,6 @@ public class producto extends AppCompatActivity {
         String producto = bundle.getString("titulo");
         double importe = -1234.56;
         NumberFormat formatoImporte = NumberFormat.getCurrencyInstance();
-        //Si se desea forzar el formato español:
         formatoImporte = NumberFormat.getCurrencyInstance(new Locale("en","US"));
 
 
@@ -69,7 +70,6 @@ public class producto extends AppCompatActivity {
                 break;
         }
 
-        //String info = bundle.getString("descripcion");
         txtProducto.setText(titulo);
         txtDescripcion.setText(info);
         txtPrecio.setText(formatoImporte.format(importe).toString());
@@ -78,8 +78,19 @@ public class producto extends AppCompatActivity {
         ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this,
                 android.R.layout.simple_spinner_item, datos);
         spinner.setAdapter(adapter);
+        double finalImporte = importe;
+        final String[] text = {""};
 
-        //int cantidad  = Integer.parseInt(String.valueOf(txtCantidad.getText()));
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                text[0] = parent.getItemAtPosition(pos).toString();
+                //Toast.makeText(parent.getContext(), text[0], Toast.LENGTH_SHORT).show();
+            }
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+
         btnConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,8 +99,8 @@ public class producto extends AppCompatActivity {
                 //Preparando data a enviar
                 act2.putExtra("titulo",txtProducto.getText());
                 act2.putExtra("descripcion",txtDescripcion.getText());
-                act2.putExtra("precio",txtPrecio.getText());
-                //act2.putExtra("cantidad",cantidad);
+                act2.putExtra("precio", finalImporte);
+                act2.putExtra("cantidad", text[0]);
                 startActivity(act2);
             }
         });

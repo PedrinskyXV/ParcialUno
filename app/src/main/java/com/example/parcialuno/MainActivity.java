@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
         pcAdapter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Seleccion  "
-                        +obtenerPc().get(rcvPc.getChildAdapterPosition(v)).getTitulo(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Seleccion  "
+                        //+obtenerPc().get(rcvPc.getChildAdapterPosition(v)).getTitulo(), Toast.LENGTH_SHORT).show();
                 String aux = "";
                 aux = obtenerPc().get(rcvPc.getChildAdapterPosition(v)).getTitulo();
                 Intent act = new Intent(MainActivity.this,producto.class);
