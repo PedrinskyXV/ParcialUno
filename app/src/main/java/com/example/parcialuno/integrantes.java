@@ -16,6 +16,15 @@ public class integrantes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_integrantes);
+        WebView html = findViewById(R.id.wvContenido);
+        String texto;
+        texto = "<html><body style=\"background-color: lightblue; >";
+        texto+="<div style=\"border-radius: 25px; border-style:solid;background-color: lightblue; ";
+        texto+="padding: 10px;border-width: 2px\">";
+        texto+="<p align=\"justify\">";
+        texto+="<br><br><strong>Integrantes:</strong><br>&nbsp - Milton Gerardo Aguilera Ramos, 328218<br>&nbsp - Josue Salvador Reyes Melgar, 229415<br>&nbsp - Pedro Alexander Perez Rosales, 323418<br>&nbsp - Willian Alexander Vasquez Hernandez, 273815</p>";
+        texto +="</p></div></body></html>";
+        html.loadData(texto,"text/html","utf-8");
         btnRegresar = findViewById(R.id.btnRegresar);
         btnRegresar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,14 +33,5 @@ public class integrantes extends AppCompatActivity {
                 startActivity(act);
             }
         });
-        html = findViewById(R.id.wvContenido);
-        String texto;
-        texto = "<html><body>";
-        texto+="<div style=\"border-radius: 25px; border-style:solid;background-color: #046cb4;";
-        texto+="padding: 10px;border-width: 2px\">";
-        texto+="<p align=\"justify\" style=\"color: white\">";
-        texto+="<strong>Integrantes:</strong><br>Milton Gerardo Aguilera Ramos<br> Josue Salvador Reyes Melgar<br> Pedro Alexander Perez Rosales<br>Willian Alexander Vasquez Hernandez</p>";
-        texto +="</p></div></body></html>";
-        html.loadData(texto,"text/html","utf-8");
     }
 }
